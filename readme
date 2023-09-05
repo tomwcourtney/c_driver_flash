@@ -6,3 +6,4 @@
 5. Put your tests in test_harness->tests
 6. The doxyfile only produces docs for what's in the inc folder. You might need to change the project name.
 7. To run tests cd test_harness then run "make". You will need the cppUTest library installed on your system and CPPUTEST_HOME environment variable set.
+8. If you want to use github pages to automatically generate and host a doxygen document the hook is setup already is .github. You'll just need to create a gh-pages branch and enable actions ability to read-write to a branch from your new driver's repository settings.
