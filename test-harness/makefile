@@ -1,10 +1,8 @@
 #Set this to @ to keep the makefile quiet
-#SILENCE = @
+SILENCE = @
 
 #---- Outputs ----#
 COMPONENT_NAME = your
-
-CPPUTEST_USE_GCOV = Y
 
 #--- Inputs ----#
 PROJECT_HOME_DIR = .
@@ -27,7 +25,6 @@ endif
 # production code C and CPP files.
 #
 SRC_DIRS += ../src
-SRC_DIRS += ../user_code
 # SRC_DIRS += spies
 
 
@@ -60,7 +57,6 @@ CPPUTEST_USE_EXTENSIONS = Y
 INCLUDE_DIRS += $(CPPUTEST_HOME)/include
 INCLUDE_DIRS += $(CPPUTEST_HOME)/include/Platforms/Gcc
 INCLUDE_DIRS += ../inc
-INCLUDE_DIRS += ../user_code
 
 
 # INCLUDE_DIRS += tests/exploding-fakes
@@ -130,16 +126,12 @@ CPPUTEST_CXXFLAGS += --std=c++11
 CPPUTEST_CXXFLAGS += -Wno-c++98-compat-pedantic
 CPPUTEST_CXXFLAGS += -Wno-c++98-compat
 
-# gcov flags
-#CPPUTEST_CFLAGS += -fprofile-arcs -ftest-coverage asdasdsadsa
-
 # Coloroze output
 CPPUTEST_EXE_FLAGS += -c
 
 # --- LD_LIBRARIES -- Additional needed libraries can be added here.
 # commented out example specifies math library
-# gcov linker flags
-#LD_LIBRARIES += -L$(CPPUTEST_HOME)/lib -lgcov --coverage
+#LD_LIBRARIES += -lm
 
 # Look at $(CPPUTEST_HOME)/build/MakefileWorker.mk for more controls
 
